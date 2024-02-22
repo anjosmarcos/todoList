@@ -23,12 +23,9 @@ export const styles = StyleSheet.create({
     },
     textTask: {
         flex: 1,
-        justifyContent: 'center',
+        flexDirection: 'row', // Adicione flexDirection: 'row' para alinhar itens horizontalmente
+        alignItems: 'center', // Alinhe os itens verticalmente
     },
-    tastText: {
-        color: '#F2F2F2',
-        fontSize: 16,
-    }, 
     trash: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -39,5 +36,13 @@ export const styles = StyleSheet.create({
         color: '#808080',
         fontSize: 16,
         fontWeight: 'bold',
-    }
+    },
+    taskText: {
+        fontSize: 16,
+        marginLeft: 8, // Adicione um espaço entre o checkbox e o texto
+    },
+    completedTaskText: {
+        textDecorationLine: 'line-through',
+        color: 'lightgrey',
+    },
 })

@@ -76,5 +76,11 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 'bold',
     },
+    checkboxContainer: {
+        alignItems: 'center', // Centralizar o checkbox verticalmente
+        justifyContent: 'center', // Centralizar o checkbox horizontalmente
+        width: 24, // Largura fixa do checkbox
+        height: 24, // Altura fixa do checkbox
+    },
 
 })

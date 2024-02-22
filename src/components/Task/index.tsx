@@ -13,10 +13,13 @@ export function Task({ name, completed, onRemove, isDone }: TaskProps) {
                     isDone(name);
                 }}
                 checkedColor={completed ? 'green' : 'black'}
+
             />
 
             <View style={styles.textTask}>
-                <Text style={styles.tastText}>{name}</Text>
+                <Text style={[styles.taskText, completed && styles.completedTaskText]}>
+                    {name}
+                </Text>
             </View>
 
             <TouchableOpacity

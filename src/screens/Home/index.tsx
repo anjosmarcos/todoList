@@ -21,12 +21,24 @@ export function Home() {
         setNewTask('')
     }
 
+    // function handleRemoveTask(item: string) {
+    //     return () => {
+    //         setTasks((prevState) => prevState.filter((task) => task.name !== item));
+    //     };
+    // }
+    
     function handleRemoveTask(item: string) {
         return () => {
-            setTasks((prevState) => prevState.filter((task) => task.name !== item));
+            // Verificar se a tarefa está marcada como concluída
+            const taskToRemove = tasks.find(task => task.name === item);
+            if (taskToRemove && taskToRemove.completed) {
+                // Remover a tarefa apenas se estiver marcada como concluída
+                setTasks(prevState => prevState.filter(task => task.name !== item));
+            } else {
+                Alert.alert('Atenção', 'Você só pode excluir tarefas concluídas');
+            }
         };
     }
-    
     
 
     function countCreatedTask() {
